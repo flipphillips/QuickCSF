@@ -28,7 +28,9 @@ def getActiveScreen(widget=None):
 			return getPrimaryScreen()
 			
 	windowCenter = widget.geometry().center()
-	return QtGui.QGuiApplication.screenAt(windowCenter)
+	# return QtGui.QGuiApplication.screenAt(windowCenter)
+	return QtGui.QGuiApplication.primaryScreen() # qt 5.9 compatability
+
 
 def degreesToPixels(degrees, distance_mm, screen=None):
 	'''Converts visual angle to pixels
