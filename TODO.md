@@ -1,6 +1,11 @@
 # To Do
 
-- Fix quick first trial of every block
+## Fixes
+
+- Quick first trial of every block
+
+## Enhancements
+
 - Screen measurements?
 - Calibration
 - Temporal

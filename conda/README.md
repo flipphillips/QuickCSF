@@ -1,4 +1,4 @@
-# Readme
+# Anaconda Environment
 
 This directory contains a description of our Anaconda environment that you can use to recreate it for consistency.
 
