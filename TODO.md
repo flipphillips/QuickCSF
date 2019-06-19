@@ -6,7 +6,8 @@
 
 ## Enhancements
 
-- Screen measurements?
-- Calibration
+- validate self.degreesToPixels since it uses physicalSize().width()
+- Luminance Calibration
+- 10bit displays?
 - Temporal
 - Eccentric patches
