@@ -5,8 +5,10 @@ import math
 
 from qtpy import QtCore, QtGui
 
+
 def getPrimaryScreen():
 	return QtGui.QGuiApplication.primaryScreen()
+
 
 def getSecondaryScreen():
 	primary = getPrimaryScreen()
@@ -14,22 +16,23 @@ def getSecondaryScreen():
 		if screen.name() != primary.name():
 			return screen
 
+
 def getActiveScreen(widget=None):
 	'''Returns the screen object which is currently active
 
-		Args:
-			widget (optional): if specified, it's center will be used to determine the "active" screen
-				If not specified, widget with focus will be used
-				If no widget has focus, returns primary screen
+	Args:
+		widget (optional): if specified, it's center will be used to determine the "active" screen.
+			If not specified, widget with focus will be used
+			If no widget has focus, returns primary screen
 	'''
 	if widget is None:
 		widget = QtGui.QGuiApplication.focusWindow()
 		if widget is None:
 			return getPrimaryScreen()
-			
-	windowCenter = widget.geometry().center()
+
+	# windowCenter = widget.geometry().center()
 	# return QtGui.QGuiApplication.screenAt(windowCenter)
-	return QtGui.QGuiApplication.primaryScreen() # qt 5.9 compatability
+	return QtGui.QGuiApplication.primaryScreen()  # qt 5.9 compatability
 
 
 def degreesToPixels(degrees, distance_mm, screen=None):
@@ -47,6 +50,7 @@ def degreesToPixels(degrees, distance_mm, screen=None):
 
 	return degrees / math.degrees(math.atan((screen.physicalSize().width() / screen.geometry().width()) / distance_mm))
 
+
 def moveToScreen(window, screen):
 	'''Moves a window to a specific screen and attempts to preserve state / location
 
@@ -56,26 +60,30 @@ def moveToScreen(window, screen):
 	'''
 	state = window.windowState()
 	window.showNormal()
-	window.move(screen.geometry().center() - QtCore.QPoint(window.geometry().width(), window.geometry().height())/2)
+	window.move(screen.geometry().center() - QtCore.QPoint(window.geometry().width(), window.geometry().height()) / 2)
 	QtCore.QTimer.singleShot(1, lambda: window.setWindowState(state))
+
 
 def moveToSecondaryScreen(window):
 	moveToScreen(window, getSecondaryScreen())
 
+
 def moveToPrimaryScreen(window):
 	moveToScreen(window, getPrimaryScreen())
 
+
 if __name__ == '__main__':
 	from qtpy import QtWidgets
+	import sys
 
 	def updateButton():
 		screen = getActiveScreen()
 		print(screen.name())
 
 		window.setText(str(degreesToPixels(3, 750)))
-		moveToSecondaryScreen(window)
+		# moveToSecondaryScreen(window)
 
-	app = QtWidgets.QApplication()
+	app = QtWidgets.QApplication(sys.argv)
 	window = QtWidgets.QPushButton()
 	window.setText('hi')
 

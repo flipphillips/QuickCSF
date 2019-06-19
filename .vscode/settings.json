@@ -1,3 +1,8 @@
 {
-    "python.pythonPath": "/Users/flip/anaconda3/envs/qcsf/bin/python"
+    "python.pythonPath": "/Users/flip/anaconda3/envs/qcsf/bin/python",
+    "cSpell.words": [
+        "aulcsf",
+        "numpy",
+        "qtpy"
+    ]
 }
