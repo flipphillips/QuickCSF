@@ -10,6 +10,13 @@ Special thanks to Dr. Tianshi Lu at Wichita State University for providing a MAT
 
 ## Dependencies
 
+Dependencies are installed via the `conda env` command. They include ---
+
+* `numpy` - numerical calculations
+* `qtpy` - mystical py-glue
+* `pyqt` - python bindings, right now at v 5.9 in Anaconda, 5.13 in the wild.
+
+<!-- 
 Requires:
 
 * `numpy`
@@ -18,19 +25,28 @@ Requires:
 
 Optional (for simulation visuals):
 
-* `matplotlib`
+* `matplotlib` -->
 
 ## Installation
 
+<!-- 
 ~~~~bash
 pip3 install -e .
-~~~~
+~~~~ -->
 
 To install into a environment using Anaconda, use the description found in the `conda` directory.
+
+When using Anaconda, you should **not** run the supplied `setup.py`, but instead, use the `conda env` command. See the `README.md` in the `conda/` directory for information.
 
 ## Usage
 
 ### Measuring CSF
+
+Ensure you are using the `qcsf` environment in Anaconda, using:
+
+~~~bash
+conda activate qcsf
+~~~
 
 Run:
 

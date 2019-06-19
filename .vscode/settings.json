@@ -1,8 +1,15 @@
 {
     "python.pythonPath": "/Users/flip/anaconda3/envs/qcsf/bin/python",
     "cSpell.words": [
+        "Baek",
+        "Lesmes",
+        "Tianshi",
         "aulcsf",
+        "conda",
         "numpy",
-        "qtpy"
+        "pyqt",
+        "qcsf",
+        "qtpy",
+        "vpclab"
     ]
 }

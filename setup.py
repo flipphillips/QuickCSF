@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+### FP
+print("This distribution of QuickCSF uses the Anaconda environment system. You should not run this installer.")
+exit(-1)
+### FP
+
 from os import path
 from setuptools import setup
 import importlib

@@ -25,20 +25,32 @@ QuickCSF
 
 ## [Unreleased changes]
 
+## [1.0.1] - 2019-06-19
+
+Seems to actually work cross-platform.
+
 ### Added
 
 - `conda` environment description
 - instructions in `README.md`
+- my versioning and building code.
 
 ### Changed
 
 - Made markdown formatting 'compliant' for `README`
+- Tweaked some formatting for PEP8 compatibility (FP=OCD) _but_ I did keep tab-spacing.
+- added my vscode configurations mainly for x-platform-ism (e.g., removed from `.gitignore`)
+
+### `Deprecated`
+
+- Warning and exit in `setup.py`.
 
 ### Fixed
 
 - `setPixmap(None)` can't be `None`
 - `argv` for widget
-- temporary regression of `screenAt`
+- temporary regression of `screenAt` to support Anaconda's 'mere' support of Qt 5.9
+- `argv` for screen.py test code
 
 ## [0.0.1] - 2019-05-20
 
